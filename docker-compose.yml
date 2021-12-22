@@ -1,0 +1,21 @@
+version: "3.7"
+
+x-app-volumes: &app-volumes
+  - .:/app:cached
+  - ~/.bash_history:/root/.bash_history
+  - bundle_cache:/bundle_cache
+
+x-app-environment: &app-environment
+  - GOOGLE_CLIENT_ID
+  - GOOGLE_CLIENT_EMAIL
+  - GOOGLE_ACCOUNT_TYPE
+  - GOOGLE_PRIVATE_KEY
+
+services:
+  app:
+    build: .
+    volumes: *app-volumes
+    environment: *app-environment
+
+volumes:
+  bundle_cache:
