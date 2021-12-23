@@ -1,16 +1,15 @@
-require 'docx'
 require 'zip'
 require_relative 'template_engine.rb'
 require_relative 'commands.rb'
 require_relative 'config.rb'
 
 class CreateDocuments
+  ARCHIVE_NAME = 'archive.zip'
+
   def self.call(template_path, config_path, generated_files_path)
     configs = Config.parse_table(config_path)
     updated_configs = configs.map { |config| Commands::Executor.run(config) }
 
-    timestamp = Time.now.to_i
-    files_path = "uploads/#{timestamp}"
     Dir.mkdir generated_files_path
     create_files_from_template(updated_configs, template_path, generated_files_path)
 
@@ -34,7 +33,7 @@ class CreateDocuments
 
   def self.create_zip_archive(dir_path)
     filenames = Dir.entries(dir_path).reject { |e| ['..', '.'].include? e }
-    zipfile_name = "#{dir_path}/archive.zip"
+    zipfile_name = "#{dir_path}/#{ARCHIVE_NAME}"
 
     Zip::File.open(zipfile_name, create: true) do |zipfile|
       filenames.each do |filename|

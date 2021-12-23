@@ -26,4 +26,4 @@ COPY . /app
 
 EXPOSE 3000
 
-CMD ["bash", "-c", "bundle", "exec", "puma", "-C", "config/puma.rb"]
+CMD ["bash", "-c", "bundle", "exec", "ruby", "src/server.rb"]

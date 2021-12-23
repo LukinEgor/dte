@@ -1,4 +1,4 @@
-require 'minitest/autorun'
+require_relative 'test_helper.rb'
 require "wrong"
 require_relative '../src/create_documents.rb'
 
@@ -14,6 +14,6 @@ class CreateDocumenstTest < MiniTest::Unit::TestCase
 
     documents_archive_path = CreateDocuments.call(template_path, config_path, generated_files_path)
 
-    assert { documents_archive_path.present? }
+    deny { documents_archive_path.nil? || documents_archive_path.empty? }
   end
 end

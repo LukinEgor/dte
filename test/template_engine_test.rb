@@ -1,4 +1,4 @@
-require 'minitest/autorun'
+require_relative 'test_helper.rb'
 require_relative '../src/template_engine.rb'
 
 class TemplateEngineTest < MiniTest::Unit::TestCase
