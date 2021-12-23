@@ -11,6 +11,7 @@ GEM
     byebug (11.1.3)
     concurrent-ruby (1.1.9)
     declarative (0.0.20)
+    diff-lcs (1.2.5)
     docx (0.6.2)
       nokogiri (~> 1.10, >= 1.10.4)
       rubyzip (~> 2.0)
@@ -77,6 +78,7 @@ GEM
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     os (1.1.4)
+    predicated (0.2.6)
     public_suffix (4.0.6)
     racc (1.6.0)
     rack (2.2.3)
@@ -89,10 +91,16 @@ GEM
     retriable (3.1.2)
     rexml (3.2.5)
     ruby2_keywords (0.0.5)
+    ruby2ruby (2.4.4)
+      ruby_parser (~> 3.1)
+      sexp_processor (~> 4.6)
     rubyXL (3.4.18)
       nokogiri (>= 1.10.8)
       rubyzip (>= 1.3.0)
+    ruby_parser (3.18.1)
+      sexp_processor (~> 4.16)
     rubyzip (2.3.2)
+    sexp_processor (4.16.0)
     signet (0.16.0)
       addressable (~> 2.8)
       faraday (>= 0.17.3, < 2.0)
@@ -110,6 +118,12 @@ GEM
       concurrent-ruby (~> 1.0)
     uber (0.1.0)
     webrick (1.7.0)
+    wrong (0.7.1)
+      diff-lcs (~> 1.2.5)
+      predicated (~> 0.2.6)
+      ruby2ruby (>= 2.0.1)
+      ruby_parser (>= 3.0.1)
+      sexp_processor (>= 4.0)
 
 PLATFORMS
   ruby
@@ -125,6 +139,7 @@ DEPENDENCIES
   rubyXL (~> 3.4)
   rubyzip (~> 2.3)
   sinatra (~> 2.1)
+  wrong (~> 0.7.1)
 
 RUBY VERSION
    ruby 2.7.1p83

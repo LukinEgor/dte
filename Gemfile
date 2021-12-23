@@ -22,3 +22,5 @@ gem "nokogiri", "~> 1.12"
 gem "sinatra", "~> 2.1"
 
 gem "rubyzip", "~> 2.3"
+
+gem "wrong", "~> 0.7.1"
