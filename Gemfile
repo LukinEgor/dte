@@ -12,3 +12,5 @@ gem "byebug", "~> 11.1"
 gem "docx", "~> 0.6.2"
 
 gem "rubyXL", "~> 3.4"
+
+gem "minitest", "~> 5.15"

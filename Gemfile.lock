@@ -108,6 +108,7 @@ DEPENDENCIES
   docx (~> 0.6.2)
   google-api-client (~> 0.53.0)
   googleauth (~> 1.1)
+  minitest (~> 5.15)
   rubyXL (~> 3.4)
 
 RUBY VERSION
