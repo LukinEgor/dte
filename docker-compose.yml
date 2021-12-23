@@ -10,12 +10,15 @@ x-app-environment: &app-environment
   - GOOGLE_CLIENT_EMAIL
   - GOOGLE_ACCOUNT_TYPE
   - GOOGLE_PRIVATE_KEY
+  - PORT=8000
 
 services:
   app:
     build: .
     volumes: *app-volumes
     environment: *app-environment
+    ports:
+      - "8000:8000"
 
 volumes:
   bundle_cache:

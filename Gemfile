@@ -14,3 +14,11 @@ gem "docx", "~> 0.6.2"
 gem "rubyXL", "~> 3.4"
 
 gem "minitest", "~> 5.15"
+
+gem "faraday", "~> 1.8"
+
+gem "nokogiri", "~> 1.12"
+
+gem "sinatra", "~> 2.1"
+
+gem "rubyzip", "~> 2.3"

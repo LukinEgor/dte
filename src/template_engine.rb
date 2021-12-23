@@ -2,7 +2,7 @@ require 'byebug'
 require 'docx'
 
 class TemplateEngine
-  attr_reader :doc
+  attr_accessor :doc, :config
 
   def initialize(template)
     @template = template
