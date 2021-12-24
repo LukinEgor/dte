@@ -19,11 +19,10 @@ COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
 
 RUN gem install bundler:2.1.4
-RUN bundle config set without 'development test'
-RUN bundle install --jobs 3
+RUN bundle install
 
 COPY . /app
 
-EXPOSE 3000
+EXPOSE 8000
 
 CMD ["bash", "-c", "bundle", "exec", "ruby", "src/server.rb"]
