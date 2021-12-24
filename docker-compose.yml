@@ -11,12 +11,14 @@ x-app-environment: &app-environment
   - GOOGLE_ACCOUNT_TYPE
   - GOOGLE_PRIVATE_KEY
   - PORT=8000
+  - BUNDLE_PATH=/bundle_cache
 
 services:
   app:
     build: .
     volumes: *app-volumes
     environment: *app-environment
+    command: bash -c "bundle exec ruby src/server.rb"
     ports:
       - "8000:8000"
 
