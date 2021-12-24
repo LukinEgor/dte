@@ -1,0 +1,26 @@
+version: "3.7"
+
+x-app-volumes: &app-volumes
+  - .:/app:cached
+  - ~/.bash_history:/root/.bash_history
+  - bundle_cache:/bundle_cache
+
+x-app-environment: &app-environment
+  - GOOGLE_CLIENT_ID
+  - GOOGLE_CLIENT_EMAIL
+  - GOOGLE_ACCOUNT_TYPE
+  - GOOGLE_PRIVATE_KEY
+  - PORT=8000
+  - BUNDLE_PATH=/bundle_cache
+
+services:
+  app:
+    build: .
+    volumes: *app-volumes
+    environment: *app-environment
+    command: bash -c "bundle exec ruby src/server.rb"
+    ports:
+      - "8000:8000"
+
+volumes:
+  bundle_cache:

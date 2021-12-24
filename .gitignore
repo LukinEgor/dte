@@ -1,0 +1,5 @@
+.env
+.byebug_history
+
+uploads/*
+!uploads/.keep

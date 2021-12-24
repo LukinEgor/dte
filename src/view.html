@@ -1,0 +1,29 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Untitled</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+    </head>
+    <body>
+        <h1>Upload</h1>
+        <form id="uploadbanner" enctype="multipart/form-data" method="post" action="upload">
+            <div>
+                <h3>Template (docx)</h3>
+                <input id="template_file" name="template" type="file" />
+            </div>
+            <div>
+                <h3>Config (xlsx)</h3>
+                <input id="config_file" name="config" type="file" />
+            </div>
+            <br/>
+            <input type="submit" value="submit" id="submit" />
+        </form>
+    </body>
+</html>
