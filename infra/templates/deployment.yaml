@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-{{ .Values.service.name }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-{{ .Values.service.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-{{ .Values.service.name }}
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+      - name: dte
+        command: ["bundle"]
+        args: ["exec", "ruby", "src/server.rb"]
+        image: {{ .Values.image }}:{{ .Values.version }}
+        ports:
+        - containerPort: {{ .Values.port }}
+
+        readinessProbe:
+          httpGet:
+            path: /
+            port: {{ .Values.port }}
+
+        env:
+        - name: PORT
+          value: {{ quote .Values.port }}
