@@ -2,7 +2,7 @@ service:
   name: dte
 
 image: ghcr.io/lukinegor/dte
-version: sha-ee26c9a
+version: sha-4b30f76
 port: 8000
 replicas: 1
 host: example.com
