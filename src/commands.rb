@@ -4,7 +4,7 @@ require 'byebug'
 
 module Commands
   class DownloadRequirements
-    HEADERS = ['Что нужно будет делать:', 'Основные задачи:', 'Задачи:', 'МЫ ДОВЕРИМ ВАМ ЗАДАЧИ:']
+    HEADERS = ['Что нужно делать:', 'Что нужно будет делать:', 'Основные задачи:', 'Задачи:', 'МЫ ДОВЕРИМ ВАМ ЗАДАЧИ:']
 
     def self.run(url)
       response = Faraday.get(url)
